@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "document_type": "G702 Summary Totals (Example)",
+    "derived_from": "examples/g703-continuation-sheet-example.json",
+    "retainage_percent": 10,
+    "currency": "USD",
+    "notes": "Illustrative AIA-style totals derived from the example G703 data. Not a licensed AIA form."
+  },
+  "totals": {
+    "scheduled_value_total": 677000,
+    "work_completed_previous_total": 92000,
+    "work_completed_this_period_total": 100000,
+    "materials_presently_stored_total": 58000,
+    "total_completed_and_stored_to_date": 250000,
+    "retainage_held_to_date": 25000,
+    "net_earned_less_retainage_to_date": 225000,
+    "balance_to_finish_total": 427000
+  },
+  "g702_like_fields": {
+    "total_completed_and_stored_to_date": 250000,
+    "retainage": 25000,
+    "total_earned_less_retainage": 225000,
+    "less_previous_certificates_for_payment": 82800,
+    "current_payment_due": 142200
+  },
+  "calculation_notes": [
+    "Totals are based on example line items 1-10 only.",
+    "retainage_held_to_date = total_completed_and_stored_to_date * 10%",
+    "net_earned_less_retainage_to_date = total_completed_and_stored_to_date - retainage_held_to_date",
+    "less_previous_certificates_for_payment is assumed from prior net earned less retainage (previous total completed & stored of 92,000 less 10% retainage = 82,800).",
+    "current_payment_due = net_earned_less_retainage_to_date - less_previous_certificates_for_payment"
+  ]
+}
