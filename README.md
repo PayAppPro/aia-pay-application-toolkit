@@ -45,6 +45,7 @@ If you need a production-ready, hosted solution with PDFs, approvals, history, a
     - `g703-continuation-sheet-example.csv`
     - `g703-continuation-sheet-example.json`
     - `sample-sov.csv`
+    - `g702-summary-totals-example.json`
   - `schemas/` — data structure references
     - `pay-application.schema.json`
   - `calculations/` — billing logic notes
