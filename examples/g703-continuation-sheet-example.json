@@ -1,0 +1,140 @@
+{
+  "metadata": {
+    "document_type": "G703 Continuation Sheet (Example)",
+    "retainage_percent": 10,
+    "currency": "USD",
+    "notes": "Illustrative AIA-style example only. Not a licensed AIA form."
+  },
+  "schedule_of_values": [
+    {
+      "item_no": 1,
+      "description": "Mobilization / Project Setup",
+      "scheduled_value": 15000,
+      "work_completed_previous": 15000,
+      "work_completed_this_period": 0,
+      "materials_presently_stored": 0,
+      "total_completed_and_stored": 15000,
+      "percent_complete": 100.0,
+      "balance_to_finish": 0,
+      "retainage_total_to_date": 1500,
+      "net_earned_less_retainage": 13500
+    },
+    {
+      "item_no": 2,
+      "description": "Demolition & Prep",
+      "scheduled_value": 28000,
+      "work_completed_previous": 12000,
+      "work_completed_this_period": 8000,
+      "materials_presently_stored": 0,
+      "total_completed_and_stored": 20000,
+      "percent_complete": 71.43,
+      "balance_to_finish": 8000,
+      "retainage_total_to_date": 2000,
+      "net_earned_less_retainage": 18000
+    },
+    {
+      "item_no": 3,
+      "description": "Concrete - Footings & Slab",
+      "scheduled_value": 95000,
+      "work_completed_previous": 35000,
+      "work_completed_this_period": 22000,
+      "materials_presently_stored": 5000,
+      "total_completed_and_stored": 62000,
+      "percent_complete": 65.26,
+      "balance_to_finish": 33000,
+      "retainage_total_to_date": 6200,
+      "net_earned_less_retainage": 55800
+    },
+    {
+      "item_no": 4,
+      "description": "Structural Steel",
+      "scheduled_value": 120000,
+      "work_completed_previous": 30000,
+      "work_completed_this_period": 25000,
+      "materials_presently_stored": 15000,
+      "total_completed_and_stored": 70000,
+      "percent_complete": 58.33,
+      "balance_to_finish": 50000,
+      "retainage_total_to_date": 7000,
+      "net_earned_less_retainage": 63000
+    },
+    {
+      "item_no": 5,
+      "description": "Framing / Carpentry",
+      "scheduled_value": 80000,
+      "work_completed_previous": 0,
+      "work_completed_this_period": 18000,
+      "materials_presently_stored": 0,
+      "total_completed_and_stored": 18000,
+      "percent_complete": 22.5,
+      "balance_to_finish": 62000,
+      "retainage_total_to_date": 1800,
+      "net_earned_less_retainage": 16200
+    },
+    {
+      "item_no": 6,
+      "description": "Rough Electrical",
+      "scheduled_value": 65000,
+      "work_completed_previous": 0,
+      "work_completed_this_period": 12000,
+      "materials_presently_stored": 4000,
+      "total_completed_and_stored": 16000,
+      "percent_complete": 24.62,
+      "balance_to_finish": 49000,
+      "retainage_total_to_date": 1600,
+      "net_earned_less_retainage": 14400
+    },
+    {
+      "item_no": 7,
+      "description": "Rough Plumbing",
+      "scheduled_value": 52000,
+      "work_completed_previous": 0,
+      "work_completed_this_period": 9000,
+      "materials_presently_stored": 0,
+      "total_completed_and_stored": 9000,
+      "percent_complete": 17.31,
+      "balance_to_finish": 43000,
+      "retainage_total_to_date": 900,
+      "net_earned_less_retainage": 8100
+    },
+    {
+      "item_no": 8,
+      "description": "HVAC Rough-In",
+      "scheduled_value": 78000,
+      "work_completed_previous": 0,
+      "work_completed_this_period": 15000,
+      "materials_presently_stored": 6000,
+      "total_completed_and_stored": 21000,
+      "percent_complete": 26.92,
+      "balance_to_finish": 57000,
+      "retainage_total_to_date": 2100,
+      "net_earned_less_retainage": 18900
+    },
+    {
+      "item_no": 9,
+      "description": "Exterior Envelope (Masonry/Siding)",
+      "scheduled_value": 110000,
+      "work_completed_previous": 0,
+      "work_completed_this_period": 0,
+      "materials_presently_stored": 20000,
+      "total_completed_and_stored": 20000,
+      "percent_complete": 18.18,
+      "balance_to_finish": 90000,
+      "retainage_total_to_date": 2000,
+      "net_earned_less_retainage": 18000
+    },
+    {
+      "item_no": 10,
+      "description": "Doors / Frames / Hardware",
+      "scheduled_value": 34000,
+      "work_completed_previous": 0,
+      "work_completed_this_period": 0,
+      "materials_presently_stored": 8000,
+      "total_completed_and_stored": 8000,
+      "percent_complete": 23.53,
+      "balance_to_finish": 26000,
+      "retainage_total_to_date": 800,
+      "net_earned_less_retainage": 7200
+    }
+  ]
+}
