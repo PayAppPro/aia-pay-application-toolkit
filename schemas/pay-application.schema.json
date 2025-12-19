@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.com/schemas/pay-application.schema.json",
+  "$id": "https://raw.githubusercontent.com/PayAppPro/aia-pay-application-toolkit/main/schemas/pay-application.schema.json",
   "title": "Pay Application (AIA-Style) Schema",
   "description": "Schema for AIA-style pay application data (G703 line items + optional G702 rollup totals). Educational/reference use only; not a licensed AIA form.",
   "type": "object",
@@ -14,33 +14,31 @@
       "properties": {
         "document_type": {
           "type": "string",
-          "description": "Descriptor for the document payload (e.g., 'G703 Continuation Sheet (Example)')."
+          "description": "Descriptor for the payload (e.g., 'G703 Continuation Sheet (Example)' or 'Pay Application')."
         },
         "project_name": { "type": "string" },
         "project_number": { "type": "string" },
-        "application_number": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "period_to": {
-          "type": "string",
-          "format": "date",
-          "description": "End date for the billing period."
-        },
+        "application_number": { "type": "integer", "minimum": 1 },
+        "period_from": { "type": "string", "format": "date" },
+        "period_to": { "type": "string", "format": "date" },
+
         "contractor_name": { "type": "string" },
         "owner_name": { "type": "string" },
         "architect_name": { "type": "string" },
+
         "currency": {
           "type": "string",
           "pattern": "^[A-Z]{3}$",
           "description": "ISO 4217 currency code, e.g., USD."
         },
+
         "retainage_percent": {
           "type": "number",
           "minimum": 0,
           "maximum": 100,
-          "description": "Default retainage percent used for calculations when line-item retainage is not specified."
+          "description": "Default retainage percent (0-100). Line items may override this."
         },
+
         "notes": { "type": "string" }
       }
     },
@@ -70,7 +68,7 @@
     "g702_like_fields": {
       "type": "object",
       "additionalProperties": false,
-      "description": "Optional summary fields commonly seen in a G702-style view.",
+      "description": "Optional summary fields commonly presented in a G702-style view.",
       "properties": {
         "original_contract_sum": { "$ref": "#/$defs/money" },
         "net_change_by_change_orders": { "$ref": "#/$defs/money" },
@@ -88,7 +86,7 @@
 
     "calculation_notes": {
       "type": "array",
-      "description": "Optional plain-English notes about assumptions used to compute totals.",
+      "description": "Optional plain-English notes describing assumptions used to compute totals.",
       "items": { "type": "string" }
     }
   },
@@ -111,7 +109,7 @@
       "type": "number",
       "minimum": 0,
       "maximum": 100,
-      "description": "Retainage percent expressed as 0–100."
+      "description": "Retainage percent expressed as 0-100."
     },
 
     "sovLineItem": {
@@ -119,14 +117,8 @@
       "additionalProperties": false,
       "required": ["item_no", "description", "scheduled_value"],
       "properties": {
-        "item_no": {
-          "type": "integer",
-          "minimum": 1
-        },
-        "description": {
-          "type": "string",
-          "minLength": 1
-        },
+        "item_no": { "type": "integer", "minimum": 1 },
+        "description": { "type": "string", "minLength": 1 },
 
         "scheduled_value": { "$ref": "#/$defs/money" },
 
@@ -143,7 +135,24 @@
         "net_earned_less_retainage": { "$ref": "#/$defs/money" },
 
         "notes": { "type": "string" }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "total_completed_and_stored": { "type": "number" },
+              "scheduled_value": { "type": "number" }
+            },
+            "required": ["total_completed_and_stored", "scheduled_value"]
+          },
+          "then": {
+            "properties": {
+              "total_completed_and_stored": { "maximum": { "$data": "1/scheduled_value" } }
+            },
+            "description": "Note: JSON Schema $data support varies by validator; treat this as informational."
+          }
+        }
+      ]
     }
   }
 }
